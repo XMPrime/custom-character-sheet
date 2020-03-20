@@ -1,0 +1,78 @@
+.ability {
+  background-image: url(../imgs/abilityscore.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100px;
+  height: 115px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.ability__name {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 900;
+  margin-top: 0.7em;
+}
+
+.ability__modifier {
+  font-weight: 700;
+  font-size: 1.7rem;
+  margin-top: 0.2em;
+  margin-right: 0.2em;
+}
+
+.ability__score {
+  font-weight: 500;
+  width: 50%;
+  height: 100%;
+  padding-top: 0.4em;
+  padding-bottom: 0.2em;
+  padding-right: 0.1em;
+  border: 1px solid blue;
+  border-radius: 50%;
+  vertical-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+}
+
+.ability__edit {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  width: 50%;
+  height: 150%;
+  border-radius: 50%;
+  border: 1px solid green;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -ms-overflow-style: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  color: #404040;
+  line-height: 1.6;
+}
+/*# sourceMappingURL=index.css.map */

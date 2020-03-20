@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="70px" height="45px" viewBox="0 0 70 45" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Sheet_Desktop_Static" transform="translate(-1289.000000, -485.000000)">
+            <g id="Page-1" transform="translate(1289.000000, 485.000000)">
+                <polygon id="Fill-1" fill="#FEFEFE" points="11.4371054 1 1.00159613 17.5922817 1 27.4016693 11.4387015 44 58.5597024 44 69 27.4016693 68.9984039 17.5922817 58.5644908 1"></polygon>
+                <path d="M10.933498,0 L0.00160080498,17.2275177 L0,27.7664692 L10.9366996,45 L59.0633004,45 L70,27.7664692 L69.9983992,17.2275177 L59.0697036,0 L10.933498,0 Z M1.8009056,26.9787537 L1.8025064,18.0132288 L11.8027351,2.25491069 L58.2004665,2.25491069 L68.1974936,18.0132288 L68.1990944,26.9787537 L58.1940633,42.7450893 L11.8059367,42.7450893 L1.8009056,26.9787537 Z" id="Fill-2" fill="#C53131"></path>
+                <polygon id="Fill-3" fill="#C53131" points="1 22.244678 1.70953678 23 15 1.75332911 14.2919891 1"></polygon>
+                <polygon id="Fill-4" fill="#C53131" points="55 1.75525362 68.2889373 23 69 22.2447464 55.7080109 1"></polygon>
+                <polygon id="Fill-5" fill="#C53131" points="1 22.7549801 14.2903085 44 15 43.2450199 1.70969149 22"></polygon>
+                <polygon id="Fill-6" fill="#C53131" points="55 43.2450199 55.7081653 44 69 22.7549801 68.2903085 22"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>
