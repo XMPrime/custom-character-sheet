@@ -15,11 +15,12 @@
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
+  margin-bottom: 10px;
 }
 
 .ability__name {
   text-transform: uppercase;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   font-weight: 900;
   margin-top: 0.7em;
 }
@@ -32,30 +33,62 @@
 }
 
 .ability__score {
-  font-weight: 500;
-  width: 50%;
-  height: 100%;
-  padding-top: 0.4em;
-  padding-bottom: 0.2em;
-  padding-right: 0.1em;
-  border: 1px solid blue;
-  border-radius: 50%;
-  vertical-align: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  cursor: pointer;
-}
-
-.ability__edit {
   text-align: center;
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
   font-weight: 500;
   width: 50%;
   height: 150%;
+  padding-bottom: 0.2em;
+  padding-right: 0.1em;
   border-radius: 50%;
-  border: 1px solid green;
+  border: transparent;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.proficiency-radial--container {
+  height: 15px;
+  width: 15px;
+  background-color: transparent;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+}
+
+.proficiency-radial--not-proficient {
+  height: 50%;
+  width: 50%;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+
+.proficiency-radial--proficient,
+.proficiency-radial--expertise {
+  height: 50%;
+  width: 50%;
+  background-color: black;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+
+.expertise {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+  border: 2px solid black;
+  border-radius: 50%;
+  z-index: -1;
 }
 
 * {

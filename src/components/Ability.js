@@ -1,31 +1,12 @@
-// import React from "react";
-
-// export default function Ability(props) {
-
-//   return (
-//     <div className="ability">
-//       <div className="ability__name">{props.name}</div>
-//       <div className="ability__modifier">
-//         <span className="sign">+</span>
-//         <span className="number">5</span>
-//       </div>
-//       <div className="ability__score">20</div>
-//     </div>
-//   );
-// }
-
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  setAbilityScore,
-  toggleEdit,
-  setPrevId
-} from "../reducers/abilityScoresReducer";
+import { setAbilityScore } from "../reducers/abilityScoresReducer";
 
 export default function Ability(props) {
   const dispatch = useDispatch();
   const abilityScores = useSelector(state => state.abilityScores);
   const varEdit = `${props.id}Edit`;
+  const modifier = (abilityScores[props.id] - 10) / 2;
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -43,8 +24,8 @@ export default function Ability(props) {
     <div className="ability">
       <div className="ability__name">{props.name}</div>
       <div className="ability__modifier">
-        <span className="sign">+</span>
-        <span className="number">5</span>
+        {modifier >= 0 ? <span className="sign">+</span> : null}
+        <span className="number">{modifier}</span>
       </div>
 
       <form
@@ -55,7 +36,7 @@ export default function Ability(props) {
       >
         <input
           id={varEdit}
-          className="ability__edit"
+          className="ability__score"
           type="text"
           value={props.score}
           onChange={e => dispatch(setAbilityScore(props.id, e.target.value))}
@@ -65,16 +46,3 @@ export default function Ability(props) {
     </div>
   );
 }
-
-// (
-//   <div
-//     name={props.id}
-//     className="ability__score"
-//     onClick={e => {
-//       dispatch(toggleEdit(props.id));
-//       // getFocus(e);
-//     }}
-//   >
-//     {props.score}
-//   </div>
-// )
