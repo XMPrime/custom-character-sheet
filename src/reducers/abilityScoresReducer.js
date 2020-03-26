@@ -42,18 +42,15 @@
 //   performance: 0,
 //   persuasion: 0
 // };
+import { modifierCalc } from "../js/utils";
+
 export function setAbilityScore(name, score) {
+  const abilityMod = modifierCalc(score);
   return {
     type: "SET_ABILITY_SCORE",
     name,
-    score
-  };
-}
-
-export function toggleEdit(name) {
-  return {
-    type: "TOGGLE_EDIT",
-    name
+    score,
+    abilityMod
   };
 }
 
@@ -72,22 +69,21 @@ const initialState = {
   int: 10,
   wis: 10,
   cha: 10,
-  strEdit: false,
-  dexEdit: false,
-  conEdit: false,
-  intEdit: false,
-  wisEdit: false,
-  chaEdit: false
+  strMod: 0,
+  dexMod: 0,
+  conMod: 0,
+  intMod: 0,
+  wisMod: 0,
+  chaMod: 0
 };
 
 const abilityScoresReducer = (abilityScoresState = initialState, action) => {
   switch (action.type) {
     case "SET_ABILITY_SCORE":
-      return { ...abilityScoresState, [action.name]: action.score };
-    case "TOGGLE_EDIT":
       return {
         ...abilityScoresState,
-        [`${action.name}Edit`]: !abilityScoresState[`${action.name}Edit`]
+        [action.name]: action.score,
+        [`${action.name}Mod`]: action.abilityMod
       };
     case "SET_PREV_ID":
       console.log(action.id);

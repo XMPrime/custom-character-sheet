@@ -1,37 +1,112 @@
-.proficiency-radial--container {
-  height: 15px;
-  width: 15px;
+// PROFICIENCY RADIAL
+.proficiency-radial {
+  height: 16px;
+  width: 16px;
   background-color: transparent;
-  margin: 0 auto;
+  //   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
 }
 
-.proficiency-radial--not-proficient {
+.proficiency-radial--not-proficient,
+.proficiency-radial--proficient,
+.proficiency-radial--expertise {
   height: 50%;
   width: 50%;
   background-color: white;
   border: 1px solid black;
   border-radius: 50%;
+  position: absolute;
 }
 
 .proficiency-radial--proficient,
 .proficiency-radial--expertise {
-  height: 50%;
-  width: 50%;
   background-color: black;
-  border: 1px solid black;
-  border-radius: 50%;
 }
 
 .expertise {
-  position: absolute;
+  //   position: relative;
   height: 100%;
   width: 100%;
   background-color: transparent;
   border: 2px solid black;
   border-radius: 50%;
-  z-index: -1;
+  //   z-index: 1;
+}
+
+// SKILL HEADER
+.skills {
+  //   background-image: url(../imgs/skills.svg);
+  border: 25px solid;
+  border-image: url(../imgs/skills.svg) 4% 30 stretch;
+  //   background-size: cover;
+  //   background-repeat: no-repeat;
+  width: 300px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.skills__header,
+.skill {
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent;
+  text-align: center;
+  height: 2.5em;
+}
+.skills__header {
+  margin-top: -1.5em;
+}
+
+.skills__title {
+  font-weight: 700;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.skill {
+  height: 1em;
+  font-size: 0.85rem;
+  margin-bottom: 1em;
+  white-space: nowrap;
+}
+
+.skills__title--prof,
+.skill__prof {
+  width: 15%;
+  display: flex;
+  justify-content: center;
+}
+
+.skills__title--mod,
+.skill__mod {
+  width: 15%;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.skill__mod {
+  text-transform: uppercase;
+}
+
+.skills__title--name,
+.skill__name {
+  text-align: left;
+  width: 55%;
+  //   white-space: nowrap;
+}
+
+.skill__name {
+  text-transform: capitalize;
+}
+
+.skills__title--bonus,
+.skill__bonus {
+  width: 15%;
 }

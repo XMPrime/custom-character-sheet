@@ -1,9 +1,19 @@
+.abilities {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  max-width: 35%;
+}
+
 .ability {
-  background-image: url(../imgs/abilityscore.svg);
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 100px;
-  height: 115px;
+  border-style: solid;
+  border-width: 20px 20px 50px 20px;
+  border-image-source: url(../imgs/abilityscore.svg);
+  border-image-slice: 15% 15% 50% 15%;
+  max-width: 100px;
+  max-height: 115px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -16,13 +26,14 @@
           align-items: center;
   text-align: center;
   margin-bottom: 10px;
+  background-color: transparent;
 }
 
 .ability__name {
   text-transform: uppercase;
   font-size: 0.7rem;
   font-weight: 900;
-  margin-top: 0.7em;
+  margin-top: -0.7em;
 }
 
 .ability__modifier {
@@ -30,6 +41,7 @@
   font-size: 1.7rem;
   margin-top: 0.2em;
   margin-right: 0.2em;
+  margin-bottom: 0.3em;
 }
 
 .ability__score {
@@ -47,11 +59,10 @@
   cursor: pointer;
 }
 
-.proficiency-radial--container {
-  height: 15px;
-  width: 15px;
+.proficiency-radial {
+  height: 16px;
+  width: 16px;
   background-color: transparent;
-  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -64,31 +75,115 @@
   position: relative;
 }
 
-.proficiency-radial--not-proficient {
+.proficiency-radial--not-proficient,
+.proficiency-radial--proficient,
+.proficiency-radial--expertise {
   height: 50%;
   width: 50%;
   background-color: white;
   border: 1px solid black;
   border-radius: 50%;
+  position: absolute;
 }
 
 .proficiency-radial--proficient,
 .proficiency-radial--expertise {
-  height: 50%;
-  width: 50%;
   background-color: black;
-  border: 1px solid black;
-  border-radius: 50%;
 }
 
 .expertise {
-  position: absolute;
   height: 100%;
   width: 100%;
   background-color: transparent;
   border: 2px solid black;
   border-radius: 50%;
-  z-index: -1;
+}
+
+.skills {
+  border: 25px solid;
+  -o-border-image: url(../imgs/skills.svg) 4% 30 stretch;
+     border-image: url(../imgs/skills.svg) 4% 30 stretch;
+  width: 300px;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.skills__header,
+.skill {
+  max-width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: transparent;
+  text-align: center;
+  height: 2.5em;
+}
+
+.skills__header {
+  margin-top: -1.5em;
+}
+
+.skills__title {
+  font-weight: 700;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.skill {
+  height: 1em;
+  font-size: 0.85rem;
+  margin-bottom: 1em;
+  white-space: nowrap;
+}
+
+.skills__title--prof,
+.skill__prof {
+  width: 15%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.skills__title--mod,
+.skill__mod {
+  width: 15%;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.skill__mod {
+  text-transform: uppercase;
+}
+
+.skills__title--name,
+.skill__name {
+  text-align: left;
+  width: 55%;
+}
+
+.skill__name {
+  text-transform: capitalize;
+}
+
+.skills__title--bonus,
+.skill__bonus {
+  width: 15%;
 }
 
 * {
@@ -107,5 +202,13 @@ body {
   font-size: 1rem;
   color: #404040;
   line-height: 1.6;
+}
+
+.app {
+  height: 100vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 /*# sourceMappingURL=index.css.map */

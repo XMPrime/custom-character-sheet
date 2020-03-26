@@ -42,62 +42,163 @@
 //   performance: 0,
 //   persuasion: 0
 // };
-export function setAbilityScore(name, score) {
+export function updateSkill(skill) {
   return {
-    type: "SET_ABILITY_SCORE",
-    name,
-    score
+    type: "UPDATE_SKILL",
+    skill
   };
 }
 
-export function toggleEdit(name) {
-  return {
-    type: "TOGGLE_EDIT",
-    name
-  };
-}
-
-export function setPrevId(id) {
-  return {
-    type: "SET_PREV_ID",
-    id
-  };
-}
+const initialSkillsList = [
+  { name: "acrobatics", ability: "dex", proficient: false },
+  { name: "animal handling", ability: "wis", proficient: false },
+  { name: "arcana", ability: "int", proficient: false },
+  { name: "athletics", ability: "str", proficient: false },
+  { name: "deception", ability: "cha", proficient: false },
+  { name: "history", ability: "int", proficient: false },
+  { name: "insight", ability: "wis", proficient: false },
+  { name: "intimidation", ability: "cha", proficient: false },
+  { name: "investigation", ability: "int", proficient: false },
+  { name: "medicine", ability: "wis", proficient: false },
+  { name: "nature", ability: "int", proficient: false },
+  { name: "perception", ability: "wis", proficient: false },
+  { name: "performance", ability: "cha", proficient: false },
+  { name: "persuasion", ability: "cha", proficient: false },
+  { name: "religion", ability: "int", proficient: false },
+  { name: "sleight of hand", ability: "dex", proficient: false },
+  { name: "stealth", ability: "dex", proficient: false },
+  { name: "survival", ability: "wis", proficient: false }
+];
 
 const initialState = {
-  prevId: "test",
-  str: 10,
-  dex: 10,
-  con: 10,
-  int: 10,
-  wis: 10,
-  cha: 10,
-  strEdit: false,
-  dexEdit: false,
-  conEdit: false,
-  intEdit: false,
-  wisEdit: false,
-  chaEdit: false
-};
-
-const abilityScoresReducer = (abilityScoresState = initialState, action) => {
-  switch (action.type) {
-    case "SET_ABILITY_SCORE":
-      return { ...abilityScoresState, [action.name]: action.score };
-    case "TOGGLE_EDIT":
-      return {
-        ...abilityScoresState,
-        [`${action.name}Edit`]: !abilityScoresState[`${action.name}Edit`]
-      };
-    case "SET_PREV_ID":
-      console.log(action.id);
-      return {
-        ...abilityScoresState,
-        prevId: action.id
-      };
-    default:
-      return abilityScoresState;
+  skillsList: initialSkillsList,
+  acrobatics: {
+    skillName: "acrobatics",
+    ability: "dex",
+    proficiency: "not-proficient"
+  },
+  animal: {
+    skillName: "animal handling",
+    ability: "wis",
+    proficiency: "not-proficient"
+  },
+  arcana: {
+    skillName: "arcana",
+    ability: "int",
+    proficiency: "not-proficient"
+  },
+  athletics: {
+    skillName: "athletics",
+    ability: "str",
+    proficiency: "not-proficient"
+  },
+  deception: {
+    skillName: "deception",
+    ability: "cha",
+    proficiency: "not-proficient"
+  },
+  history: {
+    skillName: "history",
+    ability: "int",
+    proficiency: "not-proficient"
+  },
+  insight: {
+    skillName: "insight",
+    ability: "wis",
+    proficiency: "not-proficient"
+  },
+  intimidation: {
+    skillName: "intimidation",
+    ability: "cha",
+    proficiency: "not-proficient"
+  },
+  investigation: {
+    skillName: "investigation",
+    ability: "int",
+    proficiency: "not-proficient"
+  },
+  medicine: {
+    skillName: "medicine",
+    ability: "wis",
+    proficiency: "not-proficient"
+  },
+  nature: {
+    skillName: "nature",
+    ability: "int",
+    proficiency: "not-proficient"
+  },
+  perception: {
+    skillName: "perception",
+    ability: "wis",
+    proficiency: "not-proficient"
+  },
+  performance: {
+    skillName: "performance",
+    ability: "cha",
+    proficiency: "not-proficient"
+  },
+  persuasion: {
+    skillName: "persuasion",
+    ability: "cha",
+    proficiency: "not-proficient"
+  },
+  religion: {
+    skillName: "religion",
+    ability: "int",
+    proficiency: "not-proficient"
+  },
+  sleight: {
+    skillName: "sleight of hand",
+    ability: "dex",
+    proficiency: "not-proficient"
+  },
+  stealth: {
+    skillName: "stealth",
+    ability: "dex",
+    proficiency: "not-proficient"
+  },
+  survival: {
+    skillName: "survival",
+    ability: "wis",
+    proficiency: "not-proficient"
   }
 };
 
-export default abilityScoresReducer;
+const skillsReducer = (skillsState = initialState, action) => {
+  switch (action.type) {
+    case "UPDATE_SKILL":
+      const { skillName, ability, proficiency } = action.skill;
+      const firstWord = skillName.split(" ")[0];
+      return {
+        ...skillsState,
+        [`${firstWord}`]: {
+          skillName,
+          ability,
+          proficiency
+        }
+      };
+
+    default:
+      return skillsState;
+  }
+};
+
+export default skillsReducer;
+// acrobatics: { mod: "dex", bonus: 0 },
+// animal handling: { mod: "wis", bonus: 0 },
+// arcana: { mod: "int", bonus: 0 },
+// athletics: { mod: "str", bonus: 0 },
+// deception: { mod: "cha", bonus: 0 },
+// history: { mod: "int", bonus: 0 },
+// insight: { mod: "wis", bonus: 0 },
+// intimidation: { mod: "cha", bonus: 0 },
+// investigation: { mod: "int", bonus: 0 },
+// medicine: { mod: "wis", bonus: 0 },
+// nature: { mod: "int", bonus: 0 },
+// perception: { mod: "wis", bonus: 0 },
+// performance: { mod: "cha", bonus: 0 },
+// persuasion: { mod: "cha", bonus: 0 },
+// religion: { mod: "int", bonus: 0 },
+// sleight of hand: { mod: "dex", bonus: 0 },
+// stealth: { mod: "dex", bonus: 0 },
+// survival: { mod: "wis", bonus: 0 }

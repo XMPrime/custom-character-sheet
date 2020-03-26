@@ -6,7 +6,6 @@ export default function Ability(props) {
   const dispatch = useDispatch();
   const abilityScores = useSelector(state => state.abilityScores);
   const varEdit = `${props.id}Edit`;
-  const modifier = (abilityScores[props.id] - 10) / 2;
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -18,14 +17,18 @@ export default function Ability(props) {
       abilityScores[props.id];
   }
 
+  function handleChange(e) {
+    dispatch(setAbilityScore(props.id, Number(e.target.value)));
+  }
+
   useEffect(() => {});
 
   return (
     <div className="ability">
       <div className="ability__name">{props.name}</div>
       <div className="ability__modifier">
-        {modifier >= 0 ? <span className="sign">+</span> : null}
-        <span className="number">{modifier}</span>
+        {props.score >= 10 ? <span className="sign">+</span> : null}
+        <span className="number">{props.abilityMod}</span>
       </div>
 
       <form
@@ -39,7 +42,7 @@ export default function Ability(props) {
           className="ability__score"
           type="text"
           value={props.score}
-          onChange={e => dispatch(setAbilityScore(props.id, e.target.value))}
+          onChange={e => handleChange(e)}
           onBlur={e => handleOnBlur(e)}
         ></input>
       </form>
