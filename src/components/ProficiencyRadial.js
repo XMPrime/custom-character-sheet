@@ -50,6 +50,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { updateSkill } from "../reducers/skillsReducer";
+import { calcTotalBonus } from "../js/utils";
 
 export default function ProficiencyRadial(props) {
   const dispatch = useDispatch();

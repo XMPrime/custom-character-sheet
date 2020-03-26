@@ -7,10 +7,9 @@ export default function Skills() {
   const { strMod, dexMod, conMod, intMod, wisMod, chaMod } = useSelector(
     state => state.abilityScores
   );
-  const skillsList = useSelector(state => state.skills.skillsList).map(
+  const skillsList = Object.entries(useSelector(state => state.skills)).map(
     skill => {
       let abilityMod;
-      console.log(skill.ability);
       switch (skill.ability) {
         case "str":
           abilityMod = strMod;
@@ -36,8 +35,9 @@ export default function Skills() {
       }
       return (
         <Skill
-          skillName={skill.name}
-          skillAbility={skill.ability}
+          key={skill[1].skillName}
+          skillName={skill[0]}
+          skillAbility={skill[1].ability}
           abilityMod={abilityMod}
           dispatch={dispatch}
         />

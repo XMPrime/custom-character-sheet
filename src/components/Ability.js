@@ -27,7 +27,7 @@ export default function Ability(props) {
     <div className="ability">
       <div className="ability__name">{props.name}</div>
       <div className="ability__modifier">
-        {props.score >= 10 ? <span className="sign">+</span> : null}
+        {props.score >= 10 ? <span className="sign">+</span> : ""}
         <span className="number">{props.abilityMod}</span>
       </div>
 

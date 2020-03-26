@@ -71,110 +71,129 @@ const initialSkillsList = [
 ];
 
 const initialState = {
-  skillsList: initialSkillsList,
+  //   skillsList: initialSkillsList,
   acrobatics: {
     skillName: "acrobatics",
     ability: "dex",
-    proficiency: "not-proficient"
+    proficiency: "not-proficient",
+    totalBonus: 0
   },
   animal: {
     skillName: "animal handling",
     ability: "wis",
-    proficiency: "not-proficient"
+    proficiency: "not-proficient",
+    totalBonus: 0
   },
   arcana: {
     skillName: "arcana",
     ability: "int",
-    proficiency: "not-proficient"
+    proficiency: "not-proficient",
+    totalBonus: 0
   },
   athletics: {
     skillName: "athletics",
     ability: "str",
-    proficiency: "not-proficient"
+    proficiency: "not-proficient",
+    totalBonus: 0
   },
   deception: {
     skillName: "deception",
     ability: "cha",
-    proficiency: "not-proficient"
+    proficiency: "not-proficient",
+    totalBonus: 0
   },
   history: {
     skillName: "history",
     ability: "int",
-    proficiency: "not-proficient"
+    proficiency: "not-proficient",
+    totalBonus: 0
   },
   insight: {
     skillName: "insight",
     ability: "wis",
-    proficiency: "not-proficient"
+    proficiency: "not-proficient",
+    totalBonus: 0
   },
   intimidation: {
     skillName: "intimidation",
     ability: "cha",
-    proficiency: "not-proficient"
+    proficiency: "not-proficient",
+    totalBonus: 0
   },
   investigation: {
     skillName: "investigation",
     ability: "int",
-    proficiency: "not-proficient"
+    proficiency: "not-proficient",
+    totalBonus: 0
   },
   medicine: {
     skillName: "medicine",
     ability: "wis",
-    proficiency: "not-proficient"
+    proficiency: "not-proficient",
+    totalBonus: 0
   },
   nature: {
     skillName: "nature",
     ability: "int",
-    proficiency: "not-proficient"
+    proficiency: "not-proficient",
+    totalBonus: 0
   },
   perception: {
     skillName: "perception",
     ability: "wis",
-    proficiency: "not-proficient"
+    proficiency: "not-proficient",
+    totalBonus: 0
   },
   performance: {
     skillName: "performance",
     ability: "cha",
-    proficiency: "not-proficient"
+    proficiency: "not-proficient",
+    totalBonus: 0
   },
   persuasion: {
     skillName: "persuasion",
     ability: "cha",
-    proficiency: "not-proficient"
+    proficiency: "not-proficient",
+    totalBonus: 0
   },
   religion: {
     skillName: "religion",
     ability: "int",
-    proficiency: "not-proficient"
+    proficiency: "not-proficient",
+    totalBonus: 0
   },
   sleight: {
     skillName: "sleight of hand",
     ability: "dex",
-    proficiency: "not-proficient"
+    proficiency: "not-proficient",
+    totalBonus: 0
   },
   stealth: {
     skillName: "stealth",
     ability: "dex",
-    proficiency: "not-proficient"
+    proficiency: "not-proficient",
+    totalBonus: 0
   },
   survival: {
     skillName: "survival",
     ability: "wis",
-    proficiency: "not-proficient"
+    proficiency: "not-proficient",
+    totalBonus: 0
   }
 };
 
 const skillsReducer = (skillsState = initialState, action) => {
   switch (action.type) {
     case "UPDATE_SKILL":
-      const { skillName, ability, proficiency } = action.skill;
+      const { skillName, ability, proficiency, totalBonus } = action.skill;
       const firstWord = skillName.split(" ")[0];
       return {
         ...skillsState,
         [`${firstWord}`]: {
           skillName,
           ability,
-          proficiency
+          proficiency,
+          totalBonus
         }
       };
 

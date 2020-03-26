@@ -1,32 +1,18 @@
 export function modifierCalc(score) {
-  const modifierCalc = (score - 10) / 2;
-  return modifierCalc >= 0 ? Math.ceil(modifierCalc) : Math.floor(modifierCalc);
+  return Math.floor((score - 10) / 2);
 }
 
-export function calcTotalBonus(profBonus = 2, proficiency, abilityMod) {
-  // const targetRadial = document.getElementById(`${props.skillName}-radial`);
-  // if (targetRadial !== null) {
-  //   proficiency = targetRadial.attributes.proficiency.value;
-  //   console.log(proficiency);
-  // }
-
-  // console.log(skillName);
-  // let proficiency = document.getElementById(`${skillName}-radial`).attributes
-  //   .proficiency.value;
-  // console.log(proficiency);
-
-  // switch (proficiency) {
-  //   case "expertise":
-  //     proficiency = 2;
-  //     break;
-  //   case "proficient":
-  //     proficiency = 1;
-  //     break;
-  //   default:
-  //     proficiency = 0;
-  //     break;
-  // }
-  // const totalBonus = (profBonus, proficiency, abilityMod);
-  // return totalBonus;
+export function calcTotalBonus(profBonus = 2, proficiency = 0, abilityMod = 0) {
+  switch (proficiency) {
+    case "expertise":
+      proficiency = 2;
+      break;
+    case "proficient":
+      proficiency = 1;
+      break;
+    default:
+      proficiency = 0;
+      break;
+  }
   return profBonus * proficiency + abilityMod;
 }

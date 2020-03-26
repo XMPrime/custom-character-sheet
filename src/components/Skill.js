@@ -1,15 +1,16 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import ProficiencyRadial from "./ProficiencyRadial";
-import { updateBonus } from "../reducers/skillsReducer";
+import { updateSkill } from "../reducers/skillsReducer";
 import { calcTotalBonus } from "../js/utils";
 
 export default function Skill(props) {
   const dispatch = useDispatch();
+  const { skillAbility, skillName } = props;
   const abilityMod = useSelector(
     state => state.abilityScores[`${props.skillAbility}Mod`]
   );
-  const { skillAbility, skillName } = props;
+  const skillState = useSelector(state => state.skills[skillName]);
 
   return (
     <div className="skill">
@@ -17,14 +18,12 @@ export default function Skill(props) {
         skillName={skillName}
         skillMod={props.skillMod}
         abilityMod={abilityMod}
-        calcTotalBonus={calcTotalBonus}
-        dispatch={dispatch}
       />
       <div className="skill__mod">{skillAbility}</div>
       <div className="skill__name">{skillName}</div>
       <div className="skill__bonus">
         {abilityMod >= 0 ? "+" : ""}
-        {calcTotalBonus(2, skillName, abilityMod)}
+        {calcTotalBonus(2, skillState.proficiency, abilityMod)}
       </div>
     </div>
   );
