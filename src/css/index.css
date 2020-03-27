@@ -186,6 +186,21 @@
   width: 15%;
 }
 
+.character-creation {
+  border: 30px solid;
+  -o-border-image: url(../imgs/content-box-small.svg) 25% 30 stretch;
+     border-image: url(../imgs/content-box-small.svg) 25% 30 stretch;
+  width: 500px;
+  max-height: 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;

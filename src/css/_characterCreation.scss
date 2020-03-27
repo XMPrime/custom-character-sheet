@@ -1,0 +1,11 @@
+.character-creation {
+  //   background-image: url(../imgs/skills.svg);
+  border: 30px solid;
+  border-image: url(../imgs/content-box-small.svg) 25% 30 stretch;
+  //   background-size: cover;
+  //   background-repeat: no-repeat;
+  width: 500px;
+  max-height: 10%;
+  display: flex;
+  flex-direction: column;
+}
