@@ -1,0 +1,47 @@
+//TYPOGRAPHY
+.label {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  font-size: 0.55rem;
+  font-weight: 700;
+}
+
+.label--lg {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 900;
+}
+
+.number--lg {
+  font-weight: 700;
+  font-size: 1.7rem;
+}
+
+.armor-class__text {
+  width: 50%;
+  margin-top: 1.5em;
+  line-height: normal;
+}
+
+.initiative__text {
+  text-transform: uppercase;
+  font-size: $label-fs;
+  font-weight: $label-fw;
+  margin-top: 1em;
+  line-height: normal;
+  width: 70%;
+}
+
+.initiative__number {
+  margin-top: 0.3em;
+  line-height: 1rem;
+}
+
+.speed__text {
+  margin-top: 1em;
+}
+.hit-points__number,
+.speed__number {
+  line-height: normal;
+}

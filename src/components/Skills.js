@@ -5,10 +5,10 @@ import Skill from "./Skill";
 export default function Skills() {
   const dispatch = useDispatch();
   const { strMod, dexMod, conMod, intMod, wisMod, chaMod } = useSelector(
-    state => state.abilityScores
+    (state) => state.abilityScores
   );
-  const skillsList = Object.entries(useSelector(state => state.skills)).map(
-    skill => {
+  const skillsList = Object.entries(useSelector((state) => state.skills)).map(
+    (skill) => {
       let abilityMod;
       switch (skill.ability) {
         case "str":
@@ -39,18 +39,18 @@ export default function Skills() {
           skillName={skill[0]}
           skillAbility={skill[1].ability}
           abilityMod={abilityMod}
-          dispatch={dispatch}
         />
       );
     }
   );
   return (
-    <div className="skills">
+    <div id="skills" className="skills">
+      <div className="skills__title label--lg">skills</div>
       <div className="skills__header">
-        <div className="skills__title skills__title--prof">prof</div>
-        <div className="skills__title skills__title--mod">mod</div>
-        <div className="skills__title skills__title--name">skill</div>
-        <div className="skills__title skills__title--bonus">bonus</div>
+        <div className="skills__title--prof label">prof</div>
+        <div className="skills__title--mod label">mod</div>
+        <div className="skills__title--name label">skill</div>
+        <div className="skills__title--bonus label">bonus</div>
       </div>
       {skillsList}
     </div>

@@ -7,23 +7,20 @@ import { calcTotalBonus } from "../js/utils";
 export default function Skill(props) {
   const dispatch = useDispatch();
   const { skillAbility, skillName } = props;
-  const abilityMod = useSelector(
-    state => state.abilityScores[`${props.skillAbility}Mod`]
+  const abilityScore = useSelector(
+    state => state.abilityScores[`${props.skillAbility}`]
   );
   const skillState = useSelector(state => state.skills[skillName]);
+  const totalBonus = calcTotalBonus(2, skillState.proficiency, abilityScore);
 
   return (
     <div className="skill">
-      <ProficiencyRadial
-        skillName={skillName}
-        skillMod={props.skillMod}
-        abilityMod={abilityMod}
-      />
+      <ProficiencyRadial skillName={skillName} skillMod={props.skillMod} />
       <div className="skill__mod">{skillAbility}</div>
       <div className="skill__name">{skillName}</div>
       <div className="skill__bonus">
-        {abilityMod >= 0 ? "+" : ""}
-        {calcTotalBonus(2, skillState.proficiency, abilityMod)}
+        {totalBonus >= 0 ? "+" : ""}
+        {totalBonus}
       </div>
     </div>
   );

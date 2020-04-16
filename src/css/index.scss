@@ -1,7 +1,14 @@
+$label-fs: 0.55rem;
+$label-fw: 700;
+
 // @import "materialize";
 @import "abilityScores";
 @import "skills";
 @import "characterCreation";
+@import "inspiration";
+@import "savingThrows";
+@import "typography";
+@import "borderBackgrounds";
 
 * {
   -webkit-box-sizing: border-box;
@@ -25,4 +32,135 @@ body {
   height: 100vh;
   width: 100%;
   display: flex;
+  flex-direction: column;
+  padding: 0 2em;
+  align-items: center;
+
+  & > .row {
+    margin-bottom: 1rem;
+  }
+}
+
+.hide {
+  opacity: 0;
+}
+
+//CONTAINERS
+.column {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  // width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.column--portrait-left,
+.column--portrait-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 180px;
+}
+.column--portrait-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.hit-points__left,
+.hit-points__right,
+.hit-points__center {
+  height: 75px;
+}
+.hit-points__left,
+.hit-points__right {
+  width: 20%;
+}
+.hit-points__center {
+  width: 40%;
+}
+
+.empty {
+  height: 1rem;
+}
+
+.portrait {
+  height: 160px;
+  width: 120px;
+  border: 2px solid #c53131;
+  border-radius: 50%;
+}
+
+.climb-icon {
+  height: 23px;
+  width: 23px;
+  // margin: 0 -0.4em 0 -0.2em;
+  background-image: url(../imgs/climbing.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.fa-running,
+.fa-swimmer,
+.climb-icon {
+  // margin-bottom: 0.1em;
+  color: black;
+  opacity: 50%;
+}
+
+.fa-running:hover,
+.fa-swimmer:hover,
+.climb-icon:hover {
+  opacity: 100%;
+}
+
+//INPUTS
+.heal-btn,
+.damage-btn,
+.hit-points__input {
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 1rem;
+  border-radius: 10%;
+}
+
+.heal-btn,
+.damage-btn {
+  color: white;
+  letter-spacing: 2px;
+}
+
+.heal-btn {
+  background-color: green;
+}
+
+.damage-btn {
+  background-color: red;
+}
+
+.hit-points__input {
+  margin: 0.1em 0;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 10%;
+  border: 1px solid grey;
+  background-color: transparent;
+  cursor: pointer;
 }

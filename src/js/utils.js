@@ -2,7 +2,12 @@ export function modifierCalc(score) {
   return Math.floor((score - 10) / 2);
 }
 
-export function calcTotalBonus(profBonus = 2, proficiency = 0, abilityMod = 0) {
+export function calcTotalBonus(
+  profBonus = 2,
+  proficiency = 0,
+  abilityScore = 0
+) {
+  const abilityMod = modifierCalc(abilityScore);
   switch (proficiency) {
     case "expertise":
       proficiency = 2;

@@ -1,0 +1,39 @@
+.saving-throws {
+  background-image: url(../imgs/stats.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  border: solid;
+  // border-image: url(../imgs/skills.svg) 15% 4% stretch;
+  // border-width: 100px 10px;
+  width: 400px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  .proficiency-radial {
+    margin-left: -0.4em;
+  }
+}
+
+.ability-save {
+  background-image: url(../imgs/saves-int.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 120px;
+  height: 50px;
+  display: flex;
+  // flex-direction: row;
+  align-items: center;
+  text-align: center;
+}
+
+.ability-save__label {
+  flex-grow: 2;
+}
+
+.ability-save__value {
+  flex-grow: 1;
+}
