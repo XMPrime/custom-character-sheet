@@ -45,7 +45,7 @@ export default function Ability(props) {
       >
         <input
           id={varEdit}
-          className="ability__score"
+          className="ability__score seemless-input"
           type="text"
           value={props.score}
           onChange={(e) => handleChange(e)}

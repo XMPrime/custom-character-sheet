@@ -11,10 +11,24 @@ export function setTempHP(tempHP) {
   };
 }
 
+export function setCurHP(curHP) {
+  return {
+    type: "SET_CUR_HP",
+    curHP,
+  };
+}
+
 export function changeHP(amount) {
   return {
     type: "CHANGE_HP",
     amount,
+  };
+}
+
+export function setArmorClass(armorClass) {
+  return {
+    type: "SET_ARMOR_CLASS",
+    armorClass,
   };
 }
 
@@ -26,6 +40,7 @@ const initialState = {
   curHP: 21,
   maxHP: 26,
   tempHP: 8,
+  armorClass: 10,
 };
 
 const statusReducer = (statusState = initialState, action) => {
@@ -40,6 +55,11 @@ const statusReducer = (statusState = initialState, action) => {
         ...statusState,
         tempHP: action.tempHP,
       };
+    case "SET_CUR_HP":
+      return {
+        ...statusState,
+        curHP: action.curHP,
+      };
     case "CHANGE_HP":
       if (statusState.curHP + action.amount > statusState.maxHP) {
         return {
@@ -52,7 +72,11 @@ const statusReducer = (statusState = initialState, action) => {
           curHP: statusState.curHP + action.amount,
         };
       }
-
+    case "SET_ARMOR_CLASS":
+      return {
+        ...statusState,
+        armorClass: action.armorClass,
+      };
     default:
       return statusState;
   }

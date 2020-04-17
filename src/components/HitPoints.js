@@ -1,11 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { setTempHP, changeHP } from "../reducers/statusReducer";
+import { setTempHP, setCurHP, changeHP } from "../reducers/statusReducer";
+import { setPrevId } from "../reducers/generalReducer";
 
 export default function HitPoints() {
   const dispatch = useDispatch();
+  const status = useSelector((state) => state.status);
   const { curHP, maxHP, tempHP } = useSelector((state) => state.status);
   let hpInput = 0;
+
+  const abilityScores = useSelector((state) => state.abilityScores);
+  const prevId = useSelector((state) => state.general.prevId);
+
+  // function handleSubmit(e) {
+  //   e.preventDefault();
+  //   document.getElementById(varEdit).blur();
+  // }
+
+  // function handleBlur(e) {
+  //   document.getElementById(prevId).value = abilityScores[props.id];
+  // }
 
   function heal(amount) {
     dispatch(changeHP(amount));
@@ -23,9 +37,42 @@ export default function HitPoints() {
     document.getElementById("hp-input").value = "";
   }
 
-  function handleChange(e) {
+  function handleHealDamage(e) {
     hpInput = e.target.value;
   }
+
+  function handleChange(e) {
+    if (e.target.id === "tempHP") {
+      dispatch(setTempHP(Number(e.target.value)));
+    } else if (e.target.id === "curHP") {
+      if (e.target.value > maxHP) {
+        dispatch(setCurHP(Number(maxHP)));
+      } else {
+        dispatch(setCurHP(Number(e.target.value)));
+      }
+    }
+  }
+
+  function handleBlur() {
+    document.getElementById(prevId).value = status[prevId];
+  }
+
+  function clearOnFocus(e) {
+    const targetId = e.target.id;
+    const curElement = document.getElementById(targetId);
+    if (document.activeElement === curElement) {
+      dispatch(setPrevId(targetId));
+      curElement.value = "";
+    }
+  }
+
+  function inputWidth(e) {
+    return { width: `${e.target.value.length}rem` };
+  }
+
+  useEffect(() => {
+    document.addEventListener("click", (e) => clearOnFocus(e));
+  }, []);
 
   return (
     <div className="hit-points border-bg">
@@ -33,14 +80,26 @@ export default function HitPoints() {
       <div className="row">
         <div className="hit-points__left column">
           <div className="label">temp</div>
-          <div className="hit-points__number number--lg">
-            {tempHP === 0 ? "--" : tempHP}
-          </div>
+          <input
+            id="tempHP"
+            className="hit-points__number seemless-input number--lg"
+            value={tempHP === 0 ? "-" : tempHP}
+            onBlur={() => handleBlur()}
+            onChange={(e) => handleChange(e)}
+            style={{ width: tempHP.toString().length + "rem" }}
+          />
         </div>
         <div className="hit-points__center column">
           <div className="column">
             <div className="label">current</div>
-            <div className="hit-points__number number--lg">{curHP}</div>
+            <input
+              id="curHP"
+              className="hit-points__number seemless-input number--lg"
+              value={curHP}
+              onBlur={() => handleBlur()}
+              onChange={(e) => handleChange(e)}
+              style={{ width: curHP.toString().length + "rem" }}
+            />
           </div>
           <div className="column">
             <div className="empty label"> </div>
@@ -59,9 +118,9 @@ export default function HitPoints() {
           </button>
           <input
             id="hp-input"
-            className="hit-points__input"
+            className="hit-points__heal-damage"
             type="text"
-            onChange={(e) => handleChange(e)}
+            onChange={(e) => handleHealDamage(e)}
           ></input>
           <button className="damage-btn label" onClick={() => damage(hpInput)}>
             damage
