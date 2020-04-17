@@ -102,6 +102,13 @@ body {
   width: 120px;
   border: 2px solid #c53131;
   border-radius: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 
 .climb-icon {
@@ -126,6 +133,10 @@ body {
 .fa-swimmer:hover,
 .climb-icon:hover {
   opacity: 100%;
+}
+
+.fa-plus-circle {
+  font-size: 2rem;
 }
 
 //INPUTS

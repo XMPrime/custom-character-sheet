@@ -5,9 +5,11 @@ import { setTempHP, changeHP } from "../reducers/statusReducer";
 export default function HitPoints() {
   const dispatch = useDispatch();
   const { curHP, maxHP, tempHP } = useSelector((state) => state.status);
+  let hpInput = 0;
 
   function heal(amount) {
     dispatch(changeHP(amount));
+    document.getElementById("hp-input").value = "";
   }
 
   function damage(amount) {
@@ -17,7 +19,14 @@ export default function HitPoints() {
     } else {
       dispatch(setTempHP(tempHP - amount));
     }
+
+    document.getElementById("hp-input").value = "";
   }
+
+  function handleChange(e) {
+    hpInput = e.target.value;
+  }
+
   return (
     <div className="hit-points border-bg">
       <div className="label--lg row">Hit Points</div>
@@ -45,11 +54,16 @@ export default function HitPoints() {
           </div>
         </div>
         <div className="hit-points__right column">
-          <button className="heal-btn label" onClick={() => heal(5)}>
+          <button className="heal-btn label" onClick={() => heal(hpInput)}>
             heal
           </button>
-          <input className="hit-points__input" type="text"></input>
-          <button className="damage-btn label" onClick={() => damage(5)}>
+          <input
+            id="hp-input"
+            className="hit-points__input"
+            type="text"
+            onChange={(e) => handleChange(e)}
+          ></input>
+          <button className="damage-btn label" onClick={() => damage(hpInput)}>
             damage
           </button>
         </div>

@@ -1,12 +1,20 @@
 export function setPrevId(id) {
   return {
     type: "SET_PREV_ID",
-    id
+    id,
+  };
+}
+
+export function setPortrait(img) {
+  return {
+    type: "SET_PORTRAIT",
+    img,
   };
 }
 
 const initialState = {
-  prevId: ""
+  prevId: "",
+  portrait: null,
 };
 
 const generalReducer = (generalState = initialState, action) => {
@@ -14,9 +22,13 @@ const generalReducer = (generalState = initialState, action) => {
     case "SET_PREV_ID":
       return {
         ...generalState,
-        prevId: action.id
+        prevId: action.id,
       };
-
+    case "SET_PORTRAIT":
+      return {
+        ...generalState,
+        portrait: action.img,
+      };
     default:
       return generalState;
   }
