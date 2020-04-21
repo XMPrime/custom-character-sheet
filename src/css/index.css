@@ -263,6 +263,7 @@
   text-transform: uppercase;
   font-size: 0.8rem;
   font-weight: 900;
+  text-align: center;
 }
 
 .number--lg {
@@ -303,6 +304,26 @@
   line-height: normal;
 }
 
+.misc-profs__label,
+.misc-profs__list {
+  color: #404040;
+  text-align: left;
+}
+
+.misc-profs__label {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: grey;
+}
+
+.misc-profs__list {
+  font-size: 0.85rem;
+  font-weight: 400;
+  text-transform: capitalize;
+  margin-bottom: 0.35rem;
+}
+
 .border-bg {
   background-repeat: no-repeat;
   background-size: contain;
@@ -320,10 +341,24 @@
   text-align: center;
 }
 
+.border-img {
+  border: solid;
+  border-image-slice: 21;
+  border-image-width: 20px 20px 20px 20px;
+  border-image-outset: 0px 0px 0px 0px;
+  border-image-repeat: stretch stretch;
+}
+
 .armor-class {
   background-image: url(../imgs/ac.svg);
   width: 90px;
   height: 95px;
+}
+
+.info-box {
+  background-image: url(../imgs/content-box-tall.svg);
+  width: 100%;
+  height: 530px;
 }
 
 .inspiration {
@@ -343,10 +378,28 @@
   -o-border-image: url(../imgs/status.svg) 4% stretch;
      border-image: url(../imgs/status.svg) 4% stretch;
   border-image-slice: 21;
+  border-image-width: 20px;
+  border-image-outset: 0px 0px 0px 0px;
+  border-image-repeat: stretch stretch;
+  width: 100%;
+}
+
+.misc-profs {
+  border: solid;
+  -o-border-image: url(../imgs/eqp.svg) 4% stretch;
+     border-image: url(../imgs/eqp.svg) 4% stretch;
+  border-image-slice: 21;
   border-image-width: 20px 20px 20px 20px;
   border-image-outset: 0px 0px 0px 0px;
   border-image-repeat: stretch stretch;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .speed {
@@ -750,7 +803,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 0 2em;
+  padding: 0 1.7em;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;

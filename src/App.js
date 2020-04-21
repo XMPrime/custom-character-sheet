@@ -10,10 +10,13 @@ import SavingThrows from "./components/SavingThrows";
 import Portrait from "./components/Portrait";
 import Speed from "./components/Speed";
 import HitPoints from "./components/HitPoints";
+import MiscProfs from "./components/MiscProfs";
+import InfoBox from "./components/InfoBox";
 
 export default function App() {
   return (
     <div className="app">
+      <InfoBox />
       <div className="row">
         <div className="column--portrait-left">
           <Inspiration />
@@ -32,6 +35,7 @@ export default function App() {
       <AbilityScores />
 
       <Skills />
+      <MiscProfs />
 
       {/* <Skills /> <CharacterCreation />
       <ArmorClass />  <Inspriation /> <SavingThrows /> */}

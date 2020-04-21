@@ -11,6 +11,7 @@
   text-transform: uppercase;
   font-size: 0.8rem;
   font-weight: 900;
+  text-align: center;
 }
 
 .number--lg {
@@ -48,4 +49,24 @@
 .hit-points__number,
 .speed__number {
   line-height: normal;
+}
+
+.misc-profs__label,
+.misc-profs__list {
+  color: #404040;
+  text-align: left;
+}
+
+.misc-profs__label {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: grey;
+}
+
+.misc-profs__list {
+  font-size: 0.85rem;
+  font-weight: 400;
+  text-transform: capitalize;
+  margin-bottom: 0.35rem;
 }
