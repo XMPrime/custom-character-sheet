@@ -9,6 +9,14 @@
   text-align: center;
 }
 
+.border-img {
+  border: solid;
+  border-image-slice: 21;
+  border-image-width: 20px 20px 20px 20px;
+  border-image-outset: 0px 0px 0px 0px;
+  border-image-repeat: stretch stretch;
+}
+
 .armor-class {
   background-image: url(../imgs/ac.svg);
   width: 90px;
@@ -35,11 +43,25 @@
   border: solid;
   border-image: url(../imgs/status.svg) 4% stretch;
   border-image-slice: 21;
-  border-image-width: 20px 20px 20px 20px;
+  border-image-width: 20px;
   border-image-outset: 0px 0px 0px 0px;
   border-image-repeat: stretch stretch;
 
   width: 100%;
+}
+
+.misc-profs {
+  border: solid;
+  border-image: url(../imgs/eqp.svg) 4% stretch;
+  border-image-slice: 21;
+  border-image-width: 20px 20px 20px 20px;
+  border-image-outset: 0px 0px 0px 0px;
+  border-image-repeat: stretch stretch;
+  // background-image: url(../imgs/eqp.svg);
+  width: 100%;
+  // min-height: 338px;
+  display: flex;
+  flex-direction: column;
 }
 
 .speed {

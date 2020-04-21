@@ -10,6 +10,8 @@ import SavingThrows from "./components/SavingThrows";
 import Portrait from "./components/Portrait";
 import Speed from "./components/Speed";
 import HitPoints from "./components/HitPoints";
+import MiscProfs from "./components/MiscProfs";
+import * as actions from "./data/actions.json";
 
 export default function App() {
   return (
@@ -30,7 +32,7 @@ export default function App() {
       </div>
       <HitPoints />
       <AbilityScores />
-
+      <MiscProfs />
       <Skills />
 
       {/* <Skills /> <CharacterCreation />
