@@ -12,10 +12,13 @@ import Speed from "./components/Speed";
 import HitPoints from "./components/HitPoints";
 import MiscProfs from "./components/MiscProfs";
 import * as actions from "./data/actions.json";
+import Navigation from "./components/Navigation";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function App() {
   return (
     <div className="app">
+      <Navigation />
       <div className="row">
         <div className="column--portrait-left">
           <Inspiration />
