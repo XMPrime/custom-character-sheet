@@ -44,13 +44,13 @@ export default function Skills() {
     }
   );
   return (
-    <div id="skills" className="skills">
-      <div className="skills__title label--lg">skills</div>
-      <div className="skills__header">
-        <div className="skills__title--prof label">prof</div>
-        <div className="skills__title--mod label">mod</div>
-        <div className="skills__title--name label">skill</div>
-        <div className="skills__title--bonus label">bonus</div>
+    <div id='skills' className='skills'>
+      <div className='skills__title label--lg'>skills</div>
+      <div className='skills__header'>
+        <div className='skills__title--prof label'>prof</div>
+        <div className='skills__title--mod label'>mod</div>
+        <div className='skills__title--name label'>skill</div>
+        <div className='skills__title--bonus label'>bonus</div>
       </div>
       {skillsList}
     </div>
