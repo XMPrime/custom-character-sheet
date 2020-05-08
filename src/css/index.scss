@@ -12,6 +12,7 @@ $light-grey: #838383;
 @import "savingThrows";
 @import "typography";
 @import "borderBackgrounds";
+@import "miscProfs";
 @import "normalize";
 
 * {
@@ -101,8 +102,8 @@ body {
 }
 
 .portrait {
-  height: 160px;
-  width: 120px;
+  height: 100%;
+  width: 100%;
   border: 2px solid $red;
   border-radius: 50%;
   background-position: center;
@@ -114,10 +115,14 @@ body {
   cursor: pointer;
 }
 
+.portrait-wrapper {
+  height: 160px;
+  width: 120px;
+}
+
 .climb-icon {
   height: 23px;
   width: 23px;
-  // margin: 0 -0.4em 0 -0.2em;
   background-image: url(../imgs/climbing.svg);
   background-repeat: no-repeat;
   background-size: contain;
@@ -127,7 +132,6 @@ body {
 .fa-running,
 .fa-swimmer,
 .climb-icon {
-  // margin-bottom: 0.1em;
   color: black;
   opacity: 50%;
 }

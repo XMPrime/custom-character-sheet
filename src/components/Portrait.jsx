@@ -22,18 +22,18 @@ export default function Portrait() {
   }
 
   return (
-    <Dropzone onDrop={(img) => changePortrait(img)} accept="image/*">
+    <Dropzone onDrop={(img) => changePortrait(img)} accept='image/*'>
       {({ getRootProps, getInputProps }) => (
-        <section>
+        <div className='portrait-wrapper'>
           <div
-            className="portrait"
+            className='portrait'
             {...getRootProps()}
             style={{ backgroundImage: `url("${portrait}")` }}
           >
             <input {...getInputProps()} />
-            {portrait ? null : <i className="fas fa-plus-circle"></i>}
+            {portrait ? null : <i className='fas fa-plus-circle'></i>}
           </div>
-        </section>
+        </div>
       )}
     </Dropzone>
   );

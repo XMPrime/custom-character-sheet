@@ -20,7 +20,7 @@ export default function App() {
   return (
     <div className='app'>
       {/* <Test /> */}
-      <SavingThrows />
+
       {/* <ContentBox />
       <ContentButton />
       <ContentSubButton /> */}
@@ -40,6 +40,7 @@ export default function App() {
         </div>
       </div>
       <HitPoints />
+      <SavingThrows />
       <AbilityScores />
       <Skills />
       <MiscProfs />

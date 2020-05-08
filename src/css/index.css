@@ -207,42 +207,6 @@
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  border: solid 1px;
-  width: 100%;
-  height: 200px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-.ability-save {
-  background-image: url(../imgs/saves-int.svg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  width: 50%;
-  height: 60px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  text-align: center;
-  border: 1px solid;
-}
-
-.saving-throws2 {
-  background-image: url(../imgs/stats.svg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
   width: 100%;
   max-width: 300px;
   height: 100%;
@@ -469,10 +433,11 @@
   -o-border-image: url(../imgs/eqp.svg) 4% stretch;
      border-image: url(../imgs/eqp.svg) 4% stretch;
   border-image-slice: 21;
-  border-image-width: 20px 20px 20px 20px;
+  border-image-width: 20px;
   border-image-outset: 0px 0px 0px 0px;
   border-image-repeat: stretch stretch;
   width: 100%;
+  max-width: 300px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -510,6 +475,11 @@
 
 .speed__icons i {
   width: 30%;
+}
+
+.misc-profs__container {
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
@@ -988,8 +958,8 @@ body {
 }
 
 .portrait {
-  height: 160px;
-  width: 120px;
+  height: 100%;
+  width: 100%;
   border: 2px solid #c53131;
   border-radius: 50%;
   background-position: center;
@@ -1005,6 +975,11 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   cursor: pointer;
+}
+
+.portrait-wrapper {
+  height: 160px;
+  width: 120px;
 }
 
 .climb-icon {

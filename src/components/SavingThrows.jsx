@@ -20,7 +20,7 @@ export default function SavingThrows() {
   });
 
   return (
-    <div id='saving-throws2' className='saving-throws2 bg-background'>
+    <div id='saving-throws' className='saving-throws bg-background'>
       <div className='saving-throws__title label--lg'>saving throws</div>
       <div className='saving-throws__header'>
         <div className='saving-throws__title--prof label'>prof</div>
