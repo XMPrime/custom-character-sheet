@@ -4,23 +4,52 @@
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  min-width: 320px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 300px;
   height: 220px;
   margin-top: 1em;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: abilities;
+  -ms-flex-item-align: start;
+      align-self: start;
+}
+
+@media screen and (min-width: 600px) {
+  .abilities {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    min-width: 0;
+    height: auto;
+    margin-top: 0;
+  }
 }
 
 .ability {
   background-image: url(../imgs/abilityscore.svg);
   width: 81px;
   height: 95px;
-  -ms-flex-preferred-size: 33.3333%;
-      flex-basis: 33.3333%;
+  margin-bottom: 0.5em;
 }
 
-.ability:nth-child(1),
-.ability:nth-child(2),
-.ability:nth-child(3) {
-  margin-bottom: 0.5em;
+.ability .ability:nth-child(1),
+.ability .ability:nth-child(2),
+.ability .ability:nth-child(3) {
+  margin-bottom: 0em;
+}
+
+@media screen and (min-width: 599px) {
+  .ability .ability:nth-child(1),
+  .ability .ability:nth-child(2),
+  .ability .ability:nth-child(3) {
+    margin-bottom: 0em;
+  }
 }
 
 .ability__name {
@@ -85,13 +114,12 @@
   border: solid;
   -o-border-image: url(../imgs/skills.svg) 4% stretch;
      border-image: url(../imgs/skills.svg) 4% stretch;
-  border-image-slice: 20 20 20 20 fill;
-  border-image-width: 20px 20px 20px 20px;
+  border-image-slice: 15 15;
+  border-image-width: 20px;
   border-image-outset: 0px 0px 0px 0px;
-  border-image-repeat: stretch stretch;
+  border-image-repeat: stretch;
   width: 100%;
   max-width: 300px;
-  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -100,6 +128,17 @@
       -ms-flex-direction: column;
           flex-direction: column;
   padding: 0.2em 1em;
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: skills;
+  -ms-flex-item-align: start;
+      align-self: start;
+}
+
+@media screen and (min-width: 600px) {
+  .skills {
+    height: 100%;
+  }
 }
 
 .skills__header,
@@ -203,13 +242,9 @@
 }
 
 .saving-throws {
-  background-image: url(../imgs/stats.svg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
   width: 100%;
   max-width: 300px;
-  height: 100%;
+  min-height: 200px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -217,7 +252,31 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   padding: 0.2em 1em;
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: savingThrows;
+}
+
+.saving-throw__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  height: 180px;
+}
+
+.saving-throw--strength {
+  grid-area: str;
 }
 
 .saving-throws__header,
@@ -249,10 +308,12 @@
 }
 
 .saving-throw {
-  height: 1em;
   font-size: 0.85rem;
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
   white-space: nowrap;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .saving-throws__title--prof,
@@ -378,6 +439,36 @@
   background-image: url(../imgs/ac.svg);
   width: 90px;
   height: 95px;
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: ac;
+}
+
+.creation {
+  border: solid;
+  -o-border-image: url(../imgs/content-box-small.svg) 4% stretch;
+     border-image: url(../imgs/content-box-small.svg) 4% stretch;
+  border-image-slice: 21;
+  border-image-width: 20px;
+  border-image-outset: 0px 0px 0px 0px;
+  border-image-repeat: stretch stretch;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: creation;
+}
+
+@media screen and (min-width: 600px) {
+  .content-box {
+    border: 10px solid;
+    -o-border-image: url(../imgs/content-box-tall.svg) 4% stretch;
+       border-image: url(../imgs/content-box-tall.svg) 4% stretch;
+    border-image-slice: 20;
+    border-image-width: 20px;
+    border-image-outset: 0px;
+    border-image-repeat: stretch stretch;
+    margin-top: 0.5em;
+  }
 }
 
 .info-box {
@@ -409,12 +500,18 @@
   background-image: url(../imgs/inspiration.svg);
   width: 72px;
   height: 53px;
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: inspiration;
 }
 
 .initiative {
   background-image: url(../imgs/initiative.svg);
   width: 90px;
   height: 55px;
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: initiative;
 }
 
 .hit-points {
@@ -426,6 +523,10 @@
   border-image-outset: 0px 0px 0px 0px;
   border-image-repeat: stretch stretch;
   width: 100%;
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: hitPoints;
 }
 
 .misc-profs {
@@ -445,6 +546,32 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: miscProfs;
+  -ms-flex-item-align: start;
+      align-self: start;
+}
+
+.portrait {
+  border: solid;
+  -o-border-image: url(../imgs/status.svg) 4% stretch;
+     border-image: url(../imgs/status.svg) 4% stretch;
+  border-image-slice: 10;
+  border-image-width: 20px;
+  border-image-outset: 0px 0px 0px 0px;
+  border-image-repeat: stretch stretch;
+  width: 100%;
+}
+
+.saving-throws {
+  background-image: url(../imgs/stats.svg);
+  width: 281px;
+  height: 200px;
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: savingThrows;
 }
 
 .speed {
@@ -462,6 +589,9 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   overflow: auto;
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+  grid-area: speed;
 }
 
 .speed__icons {
@@ -853,7 +983,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 0 1.7em;
+  padding: 0 5%;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -953,15 +1083,13 @@ body {
   width: 40%;
 }
 
-.empty {
-  height: 1rem;
+.hit-points__empty {
+  height: 0.55rem;
 }
 
 .portrait {
-  height: 100%;
-  width: 100%;
-  border: 2px solid #c53131;
-  border-radius: 50%;
+  height: 160px;
+  width: 120px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -975,6 +1103,10 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   cursor: pointer;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 2;
+  grid-area: portrait;
 }
 
 .portrait-wrapper {
@@ -1113,5 +1245,112 @@ body {
 .content--sub-button.selected {
   color: white;
   background-color: #c53131;
+}
+
+.grid-container--portrait {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  -ms-grid-rows: (1fr)[4] auto;
+      grid-template-rows: repeat(4, 1fr) auto;
+      grid-template-areas: "creation     creation     creation" "inspiration  portrait     initiative" "ac           portrait     speed" "hitPoints    hitPoints    hitPoints" "savingThrows savingThrows savingThrows";
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  row-gap: 0.5em;
+  margin-top: 1em;
+}
+
+.grid-container--content-box {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto;
+      grid-template-columns: auto;
+  -ms-grid-rows: (auto)[3];
+      grid-template-rows: repeat(3, auto);
+      grid-template-areas: "abilities" "skills" "miscProfs";
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  row-gap: 0.5em;
+}
+
+.creation {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding: 0 5%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.creation .creation__input {
+  border: none;
+  margin-left: -4px;
+}
+
+.creation .creation__col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-right: 1em;
+}
+
+.creation .label {
+  border-top: 1px solid;
+  text-align: left;
+}
+
+@media screen and (min-width: 600px) {
+  .grid-container--portrait {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[4] auto;
+        grid-template-columns: repeat(4, 1fr) auto;
+    -ms-grid-rows: (1fr)[3];
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-areas: "portrait portrait hitPoints   hitPoints  hitPoints   " "portrait portrait inspiration initiative savingThrows" "portrait portrait ac          speed      savingThrows";
+    -webkit-column-gap: 0.25em;
+            column-gap: 0.25em;
+    width: 100%;
+  }
+  .grid-container--content-box {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (auto)[3];
+        grid-template-columns: repeat(3, auto);
+    -ms-grid-rows: auto (auto)[6];
+        grid-template-rows: auto repeat(6, auto);
+        grid-template-areas: ". . ." "abilities skills miscProfs" "abilities skills miscProfs" "abilities skills miscProfs" "abilities skills notes" "abilities senses notes" "abilities senses notes";
+    justify-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    row-gap: 0.5em;
+  }
+  .portrait {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.left-col {
+  grid-area: area;
 }
 /*# sourceMappingURL=index.css.map */

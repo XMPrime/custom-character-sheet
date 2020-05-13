@@ -2,7 +2,6 @@ import React, { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setPortrait } from "../reducers/generalReducer";
 import Dropzone from "react-dropzone";
-import Axios from "axios";
 
 export default function Portrait() {
   const dispatch = useDispatch();
@@ -24,20 +23,23 @@ export default function Portrait() {
   return (
     <Dropzone onDrop={(img) => changePortrait(img)} accept='image/*'>
       {({ getRootProps, getInputProps }) => (
-        <div className='portrait-wrapper'>
-          <div
-            className='portrait'
-            {...getRootProps()}
-            style={{ backgroundImage: `url("${portrait}")` }}
-          >
-            <input {...getInputProps()} />
-            {portrait ? null : <i className='fas fa-plus-circle'></i>}
-          </div>
+        <div className='portrait border-bg' {...getRootProps()}>
+          {portrait ? (
+            <img
+              src={portrait}
+              alt='character portrait'
+              className='portrait-img'
+            />
+          ) : null}
+          <input {...getInputProps()} />
+          {portrait ? null : <i className='fas fa-plus-circle'></i>}
         </div>
       )}
     </Dropzone>
   );
 }
+
+// style={{ backgroundImage: `url("${portrait}")` }}
 
 {
   /* <div className="portrait" {...getRootProps()}>

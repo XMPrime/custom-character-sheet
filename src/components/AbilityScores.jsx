@@ -26,13 +26,13 @@ export default function AbilityScores() {
   }, []);
 
   return (
-    <div className="abilities row">
-      <Ability id="str" name="strength" score={str}></Ability>
-      <Ability id="dex" name="dexterity" score={dex}></Ability>
-      <Ability id="con" name="constitution" score={con}></Ability>
-      <Ability id="int" name="intelligence" score={int}></Ability>
-      <Ability id="wis" name="wisdom" score={wis}></Ability>
-      <Ability id="cha" name="charisma" score={cha}></Ability>
+    <div className='abilities'>
+      <Ability id='str' name='strength' score={str}></Ability>
+      <Ability id='dex' name='dexterity' score={dex}></Ability>
+      <Ability id='con' name='constitution' score={con}></Ability>
+      <Ability id='int' name='intelligence' score={int}></Ability>
+      <Ability id='wis' name='wisdom' score={wis}></Ability>
+      <Ability id='cha' name='charisma' score={cha}></Ability>
     </div>
   );
 }

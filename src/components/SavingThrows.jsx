@@ -20,7 +20,7 @@ export default function SavingThrows() {
   });
 
   return (
-    <div id='saving-throws' className='saving-throws bg-background'>
+    <div id='saving-throws border-bg' className='saving-throws bg-background'>
       <div className='saving-throws__title label--lg'>saving throws</div>
       <div className='saving-throws__header'>
         <div className='saving-throws__title--prof label'>prof</div>
@@ -28,6 +28,7 @@ export default function SavingThrows() {
         <div className='saving-throws__title--bonus label'>bonus</div>
       </div>
       {savingThrows}
+      {/* <div className='saving-throw__wrapper'>{savingThrows}</div> */}
     </div>
   );
 }

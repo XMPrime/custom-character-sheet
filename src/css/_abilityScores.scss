@@ -1,21 +1,41 @@
 .abilities {
   display: flex;
   flex-wrap: wrap;
-  min-width: 320px;
+  justify-content: space-between;
+  max-width: 300px;
   height: 220px;
   margin-top: 1em;
+  grid-area: abilities;
+  align-self: start;
+
+  @media screen and (min-width: 600px) {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    min-width: 0;
+    height: auto;
+    margin-top: 0;
+  }
 }
 .ability {
   background-image: url(../imgs/abilityscore.svg);
   width: 81px;
   height: 95px;
-  flex-basis: 33.3333%;
-}
-
-.ability:nth-child(1),
-.ability:nth-child(2),
-.ability:nth-child(3) {
+  // flex-basis: 33.3333%;
   margin-bottom: 0.5em;
+
+  .ability:nth-child(1),
+  .ability:nth-child(2),
+  .ability:nth-child(3) {
+    margin-bottom: 0em;
+  }
+
+  @media screen and (min-width: 599px) {
+    .ability:nth-child(1),
+    .ability:nth-child(2),
+    .ability:nth-child(3) {
+      margin-bottom: 0em;
+    }
+  }
 }
 
 .ability__name {

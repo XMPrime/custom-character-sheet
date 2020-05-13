@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import "./css/index.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Creation from "./components/Creation";
 import AbilityScores from "./components/AbilityScores";
 import Skills from "./components/Skills";
 import CharacterCreation from "./components/CharacterCreation";
@@ -20,30 +22,34 @@ export default function App() {
   return (
     <div className='app'>
       {/* <Test /> */}
-
+      <Creation />
       {/* <ContentBox />
       <ContentButton />
       <ContentSubButton /> */}
       {/* <InfoBox /> */}
-      <div className='row'>
-        <div className='column--portrait-left'>
-          <Inspiration />
-          <ArmorClass />
-        </div>
-        <div className='column--portrait-center'>
-          <Portrait />
-        </div>
+      <div className='grid-container--portrait'>
+        {/* <div className='column--portrait-left col-sm'> */}
 
-        <div className='column--portrait-right'>
-          <Initiative />
-          <Speed />
-        </div>
+        <Inspiration />
+        <ArmorClass />
+        {/* </div> */}
+        {/* <div className='column--portrait-center'> */}
+        <Portrait />
+        {/* </div> */}
+
+        {/* <div className='column--portrait-right'> */}
+        <Initiative />
+        <Speed />
+        {/* </div> */}
+        <HitPoints />
+        <SavingThrows />
       </div>
-      <HitPoints />
-      <SavingThrows />
-      <AbilityScores />
-      <Skills />
-      <MiscProfs />
+      <div className='content-box grid-container--content-box'>
+        <AbilityScores />
+        <Skills />
+        <MiscProfs />
+        <MiscProfs />
+      </div>
 
       {/* <Skills /> <CharacterCreation />
       <ArmorClass />  <Inspriation /> <SavingThrows /> */}

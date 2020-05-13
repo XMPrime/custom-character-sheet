@@ -7,11 +7,13 @@ import characterCreationReducer from "./characterCreationReducer";
 import savingThrowsReducer from "./savingThrowsReducer";
 import statusReducer from "./statusReducer";
 import speedReducer from "./speedReducer";
+import creationReducer from "./creationReducer";
 
 const rootReducer = combineReducers({
   general: generalReducer,
   abilityScores: abilityScoresReducer,
   skills: skillsReducer,
+  creation: creationReducer,
   characterCreation: characterCreationReducer,
   savingThrows: savingThrowsReducer,
   status: statusReducer,
