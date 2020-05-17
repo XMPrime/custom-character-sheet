@@ -1314,6 +1314,7 @@
         },
         {
           "name": "Hill",
+          "source": "PHB",
           "srd": true,
           "ability": [{ "wis": 1 }],
           "heightAndWeight": {
@@ -1381,6 +1382,7 @@
         },
         {
           "name": "Mountain",
+          "source": "PHB",
           "ability": [{ "str": 2 }],
           "heightAndWeight": {
             "baseHeight": 48,
@@ -1569,6 +1571,7 @@
         },
         {
           "name": "Drow",
+          "source": "PHB",
           "alias": ["Dark"],
           "ability": [{ "cha": 1 }],
           "heightAndWeight": {
@@ -1755,6 +1758,7 @@
         },
         {
           "name": "High",
+          "source": "PHB",
           "srd": true,
           "speed": 30,
           "ability": [{ "int": 1 }],
@@ -2073,6 +2077,7 @@
         },
         {
           "name": "Wood",
+          "source": "PHB",
           "speed": 35,
           "ability": [{ "wis": 1 }],
           "heightAndWeight": {
@@ -3166,6 +3171,7 @@
         },
         {
           "name": "Forest",
+          "source": "PHB",
           "ability": [{ "dex": 1 }],
           "traitTags": ["Spellcasting"],
           "entries": [
@@ -3234,6 +3240,7 @@
         },
         {
           "name": "Rock",
+          "source": "PHB",
           "srd": true,
           "ability": [{ "con": 1 }],
           "traitTags": ["Tool Proficiency"],
@@ -4237,7 +4244,7 @@
           "overwrite": { "ability": true }
         },
         {
-          "name": "Moon Elf or Sun Elf Descent",
+          "name": "High Elf Descent",
           "source": "SCAG",
           "page": 116,
           "traitTags": [
@@ -4641,6 +4648,7 @@
         },
         {
           "name": "Lightfoot",
+          "source": "PHB",
           "srd": true,
           "ability": [{ "cha": 1 }],
           "entries": [
@@ -4778,6 +4786,7 @@
         },
         {
           "name": "Stout",
+          "source": "PHB",
           "ability": [{ "con": 1 }],
           "traitTags": ["Damage Resistance"],
           "entries": [
@@ -5356,6 +5365,7 @@
         },
         {
           "name": "Variant",
+          "source": "PHB",
           "srd": true,
           "ability": [
             {

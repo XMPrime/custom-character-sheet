@@ -1189,6 +1189,10 @@ body {
   cursor: pointer;
 }
 
+.seemless-input:focus {
+  cursor: text;
+}
+
 .content-box {
   width: 100%;
 }
@@ -1299,6 +1303,12 @@ body {
 .creation .creation__input {
   border: none;
   margin-left: -4px;
+  max-width: 250px;
+}
+
+.creation .seemless-input {
+  text-align: left;
+  height: 23px;
 }
 
 .creation .creation__col {
@@ -1310,6 +1320,10 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   margin-right: 1em;
+}
+
+.creation .creation__option {
+  text-transform: capitalize;
 }
 
 .creation .label {

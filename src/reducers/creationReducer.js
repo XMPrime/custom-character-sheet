@@ -40,16 +40,17 @@
 //   };
 // }
 
-export function setTextInput(id, text) {
+export function setUserInput(name, value) {
   return {
-    type: "SET_TEXT_INPUT",
-    text,
+    type: "SET_USER_INPUT",
+    name,
+    value,
   };
 }
 
-export function setDropdownSelection(id, value) {
+export function setSubraceOptions(id, value) {
   return {
-    type: "SET_DROPDOWN_SELECTION",
+    type: "SET_SUBRACE_OPTIONS",
     id,
     value,
   };
@@ -58,7 +59,7 @@ export function setDropdownSelection(id, value) {
 const initialState = {
   charName: "",
   charlevel: 1,
-  experience: 0,
+  experience: "",
   startingClass: false,
   multiclass: false,
   alignment: false,
@@ -68,17 +69,17 @@ const initialState = {
 };
 
 export default function creationReducer(creationState = initialState, action) {
+  console.log(creationState);
   switch (action.type) {
     case "SET_DROPDOWN_SELECTION":
       return {
         ...creationState,
         [action.id]: action.value,
       };
-    case "SET_TEXT_INPUT":
-      console.log(action.text);
+    case "SET_USER_INPUT":
       return {
         ...creationState,
-        [action.id]: action.text,
+        [action.name]: action.value,
       };
     // case "SET_STARTING_CLASS":
     //   return {
